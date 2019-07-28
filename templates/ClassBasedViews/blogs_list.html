@@ -1,0 +1,35 @@
+<html>
+<head>
+<h1>TITLE</h1>
+</head>
+<body>
+{% for blog in blogs %}
+<p>
+{{blog.title | upper}}
+</p>
+<p>
+{{blog.desc}}
+</p>
+<br><br>
+{% endfor %}
+{% if is_paginated %}
+	{% if page_obj.has_previous %}
+		<a href="?page=1"> << </a>
+		<a href="?page={{page_obj.previous_page_number}}"> < </a>
+	{% endif %}
+	
+	{% for page in page_obj.paginator.page_range %}
+		{% if page == page_obj.number %}
+			<a href="?page={{page}}">{{page}}</a>
+		{% else %}
+			<a href="?page={{page}}">{{page}}</a>
+		{% endif %}
+	{% endfor %}
+	
+	{% if page_obj.has_next %}
+		<a href="?page={{page_obj.next_page_number}}"> > </a>
+		<a href="?page={{page_obj.paginator.num_pages}}"> >> </a>
+	{% endif %}
+{% endif %}
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+<meta charset="UTF-8">  
+<title>Index</title>    
+</head>  
+<body>
+<hr>
+<a href={% url 'add_company' %}> Add Company</a>
+<a href={% url 'add_employee' %}> Add Employee</a>
+<a href={% url 'add_language' %}> Add Language</a>
+<a href={% url 'myapp_login_index' %}>myapp_login_index </a>
+</hr>
+{% block content %}
+
+{% endblock %}
+</body>  
+</html> 

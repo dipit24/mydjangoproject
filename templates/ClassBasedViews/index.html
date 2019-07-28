@@ -1,0 +1,18 @@
+<html>
+{% load static %}
+<head>
+<h1>INDEX</h1>
+</head>
+<body>
+<img src="{% static 's.jpeg' %}" alt="image could not be loaded">
+
+<form action="{% url 'indexCBV'%}" method="post">
+{% csrf_token %}
+<input type="submit" value="Sent Post Request">
+</form>
+{% if is_post %}
+{{post_msg}}
+{% endif %}
+<h1></h1>
+</body>
+</html>

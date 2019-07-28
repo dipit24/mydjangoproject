@@ -1,0 +1,11 @@
+<html>
+{% load crispy_forms_tags %}
+<title>
+WRITE BLOGS
+</title>
+<form method="POST">
+{% csrf_token %}
+{{ form | crispy }}
+<input type="submit" value="Upload Blog">
+</form>
+</html>

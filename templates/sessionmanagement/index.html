@@ -1,0 +1,21 @@
+<html>
+<head>
+<title>
+SESSIONS AND MESSAGES
+</title>
+</head>
+<body>
+<form action="{% url 'session' %}" method="post">
+<input type="submit" value="success">
+{% csrf_token %}
+</form>
+<h1>
+{{name}}
+</h1>
+{% if messages %}
+	{% for msg in messages %}
+	{{msg}}
+	{% endfor %}
+{% endif %}
+</body>
+</html>
